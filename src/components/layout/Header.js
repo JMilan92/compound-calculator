@@ -1,13 +1,21 @@
 import { styled } from "styled-components";
 
+// => Import components
+import Logo from "components/shared/Logo";
+
 const HeaderStyleComponent = styled.header`
-    background: red;
+
+  border-bottom: 1px solid var(--border);
+  box-shadow: 10px 0 15px rgba(0,0,0,0.20);
+  padding: 1rem;
+  background-color: var(--background-color);
+
 `;
 const Header = () => {
   return (
     <HeaderStyleComponent>
-        <h1>My Header</h1>
-    </HeaderStyleComponent>
+        <Logo />
+      </HeaderStyleComponent>
   );
 };
 
