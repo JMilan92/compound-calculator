@@ -6,7 +6,7 @@ const DataBreakdownStyle = styled.div`
 const DataBreakdown = () => {
   return (
     <DataBreakdownStyle>
-        <h1>My Header</h1>
+        <h1>My break</h1>
     </DataBreakdownStyle>
   );
 };
