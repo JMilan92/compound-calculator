@@ -4,10 +4,12 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
+    "normalize.css": "^8.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
     "sass": "^1.83.0",
+    "styled-components": "^6.1.13",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
