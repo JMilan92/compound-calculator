@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   --card-background: #FFFFFF; /* White for the main content cards */
   --text-color: #333333; /* Dark grey text for good readability */
   --heading-color: #2F80ED; /* Bold blue for headings and important figures */
-  --label-color: #828282; /* Light grey for labels and placeholder text */
+  --label-color: #4a5568; /* Light grey for labels and placeholder text */
   --border: #BDBDBD; /* Soft border color for inputs */
   --button-background: var(--primary-color);
   --button-text-color: #FFFFFF; /* White text for buttons */

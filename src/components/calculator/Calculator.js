@@ -1,8 +1,24 @@
 import React from "react";
 import { styled } from "styled-components";
 import { getFrequencyLabel } from "utils/helper";
+import { Tooltip } from "react-tooltip";
 
 const CalculatorStyle = styled.div`
+
+  .tooltip {
+    font-size: 0.8rem;
+    color: var(--label-color);
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: inline-block;
+    text-align: center;
+  }
+
   .form-group {
     margin-bottom: 1.6rem;
     display: flex;
@@ -27,15 +43,15 @@ const CalculatorStyle = styled.div`
 
     &__radio-wrapp {
       display: flex;
-      gap: .875rem;
+      gap: 0.875rem;
       flex-direction: column;
     }
 
     &__radio {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
     }
 
     &__slider-container {
@@ -56,7 +72,6 @@ const CalculatorStyle = styled.div`
       width: 100%;
     }
   }
-
 `;
 
 const Calculator = ({
@@ -76,15 +91,25 @@ const Calculator = ({
   onSubmit,
   currencySymbols,
 }) => {
-
-  const frequencyLabel = getFrequencyLabel(compoundingFrequency); 
+  const frequencyLabel = getFrequencyLabel(compoundingFrequency);
 
   return (
     <CalculatorStyle>
+
+      <Tooltip id="my-tooltip" />
+
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label className="form-group__label" htmlFor="currency">
             Currency
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Select the currency you want to use for the calculations (e.g., USD, EUR, CAD)."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
           </label>
           <select
             className="form-group__select"
@@ -101,6 +126,14 @@ const Calculator = ({
         <div className="form-group">
           <label className="form-group__label" htmlFor="deposit">
             Initial Deposit ({currencySymbols[currency]})
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Enter the amount you plan to deposit at the start of the investment. This serves as your starting balance."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
           </label>
           <input
             className="form-group__input"
@@ -115,6 +148,14 @@ const Calculator = ({
         <div className="form-group">
           <label className="form-group__label" htmlFor="yearlyReturn">
             Yearly Return Rate (%)
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Specify the annual rate of return you expect from your investment. Typically expressed as a percentage."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
           </label>
           <div className="form-group__slider-container">
             <input
@@ -141,6 +182,14 @@ const Calculator = ({
         <div className="form-group">
           <label className="form-group__label" htmlFor="monthlyContribution">
             Monthly Contribution ({currencySymbols[currency]})
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Input the amount you plan to contribute to your investment each month."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
           </label>
           <input
             className="form-group__input"
@@ -154,7 +203,15 @@ const Calculator = ({
 
         <div className="form-group">
           <label className="form-group__label" htmlFor="period">
-          Period ({frequencyLabel})
+            Period ({frequencyLabel})
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Indicate the total duration of your investment. You can specify the period in years, quarters, or months based on your preference."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
           </label>
           <input
             className="form-group__input"
@@ -167,7 +224,17 @@ const Calculator = ({
         </div>
 
         <div className="form-group">
-          <label className="form-group__label">Compounding Frequency:</label>
+          <label className="form-group__label">
+            Compounding Frequency:
+            <span
+              className="tooltip"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="Select how often the interest will be calculated and added to your investment. Options include monthly, quarterly, or annually. A higher frequency results in more frequent compounding of returns."
+              data-tooltip-place="top"
+            >
+              i
+            </span>
+          </label>
           <div className="form-group__radio-wrapp">
             <label className="form-group__radio">
               <input
@@ -199,7 +266,9 @@ const Calculator = ({
           </div>
         </div>
 
-        <button className="btn" type="submit">Calculate</button>
+        <button className="btn" type="submit">
+          Calculate
+        </button>
       </form>
     </CalculatorStyle>
   );
