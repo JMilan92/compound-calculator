@@ -16,6 +16,7 @@ import {
 } from "recharts";
 import Headline from "components/shared/Headline";
 import illustration from "assets/images/illustration.svg";
+import { formatNumber } from "utils/helper";
 
 const DataVizualizationStyle = styled.div`
 
@@ -50,17 +51,6 @@ const DataVizualizationStyle = styled.div`
 
 // Define the colors for the Pie chart
 const COLORS = ["#333", "#1A73E8", "#0DC1AB"];
-
-// Helper function to format numbers to shorter version (e.g., 1000000 -> 1M)
-const formatNumber = (num) => {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + "M";
-  } else if (num >= 1000) {
-    return (num / 1000).toFixed(1) + "K";
-  } else {
-    return num.toFixed(2); // Ensure two decimal places for smaller numbers
-  }
-};
 
 const DataVisualization = ({ pieData = [], lineData = [] }) => {
   // Function to format percentage values with 2 decimal places
