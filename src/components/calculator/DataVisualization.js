@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, LineChart, Line, XAxis, YAxis
 const DataVizualizationStyle = styled.div`
         grid-column: 2 / 4;
 
-        background-color: white;
+        background-color: var(--card-background);
         border-radius: 12px;
         padding: 1rem;
 `;

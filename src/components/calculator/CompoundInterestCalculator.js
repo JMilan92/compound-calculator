@@ -13,9 +13,9 @@ const CompoundInterestCalculatorStyle = styled.div`
 
   .calculator {
     grid-column: 1 / 2;
-    background-color: white;
+    background-color: var(--card-background);
     border-radius: 12px;
-    padding: 1rem;
+    padding: 2rem;
   }
 `;
 

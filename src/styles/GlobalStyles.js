@@ -12,15 +12,15 @@ const GlobalStyles = createGlobalStyle`
   --card-background: #FFFFFF; /* White for the main content cards */
   --text-color: #333333; /* Dark grey text for good readability */
   --heading-color: #2F80ED; /* Bold blue for headings and important figures */
-  --input-background: #F2F2F2; /* Light grey for input fields */
+  --label-color: #828282; /* Light grey for labels and placeholder text */
   --border: #BDBDBD; /* Soft border color for inputs */
+  --button-background: var(--primary-color);
   --button-text-color: #FFFFFF; /* White text for buttons */
   --button-hover-color: #2F80ED; /* Blue for button hover effect */
-  --chart-line-color: #27AE60; /* Green for the growth line in the chart */
   --error-color: #EB5757; /* Red for error messages */
   --success-color: #6FCF97; /* Green for success messages */
-}
 
+}
 
   *,
   *::before,
@@ -28,6 +28,21 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--button-hover-color);
+    }
   }
 
 `;

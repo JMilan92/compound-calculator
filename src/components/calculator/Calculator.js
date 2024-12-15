@@ -3,27 +3,37 @@ import { styled } from "styled-components";
 
 const CalculatorStyle = styled.div`
   .form-group {
-    margin: 1rem;
+    margin-bottom: 1.6rem;
     display: flex;
     flex-direction: column;
 
     &__input {
-      margin-bottom: 0.875rem;
       padding: 0.5rem;
       border: 1px solid var(--border);
       border-radius: 4px;
     }
 
     &__label {
-      color: gray;
+      color: var(--label-color);
       margin-bottom: 0.5rem;
     }
 
     &__select {
-      margin-top: 0.5rem;
       padding: 0.5rem;
       border: 1px solid var(--border);
       border-radius: 4px;
+    }
+
+    &__radio {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
     }
 
     &__slider-container {
@@ -32,27 +42,19 @@ const CalculatorStyle = styled.div`
       gap: 1rem;
 
       input[type="number"] {
-        width: 80px;
+        width: 70px;
         padding: 0.5rem;
         border: 1px solid var(--border);
         border-radius: 4px;
-        text-align: right;
+        text-align: center;
       }
     }
-  }
 
-  button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #0056b3;
+    &__slider {
+      width: 100%;
     }
   }
+
 `;
 
 const Calculator = ({
@@ -111,6 +113,7 @@ const Calculator = ({
           </label>
           <div className="form-group__slider-container">
             <input
+              className="form-group__slider"
               type="range"
               id="yearlyReturn"
               min="1"
@@ -159,8 +162,8 @@ const Calculator = ({
         </div>
 
         <div className="form-group">
-          <label>Compounding Frequency:</label>
-          <div>
+          <label className="form-group__label">Compounding Frequency:</label>
+          <div className="form-group__radio">
             <label>
               <input
                 type="radio"
@@ -191,7 +194,7 @@ const Calculator = ({
           </div>
         </div>
 
-        <button type="submit">Calculate</button>
+        <button className="btn" type="submit">Calculate</button>
       </form>
     </CalculatorStyle>
   );
