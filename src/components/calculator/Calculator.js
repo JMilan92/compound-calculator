@@ -25,16 +25,17 @@ const CalculatorStyle = styled.div`
       border-radius: 4px;
     }
 
-    &__radio {
+    &__radio-wrapp {
       display: flex;
-      gap: 1rem;
+      gap: .875rem;
       flex-direction: column;
+    }
 
-      label {
+    &__radio {
         display: flex;
         align-items: center;
         gap: 0.5rem;
-      }
+        cursor: pointer;
     }
 
     &__slider-container {
@@ -167,17 +168,17 @@ const Calculator = ({
 
         <div className="form-group">
           <label className="form-group__label">Compounding Frequency:</label>
-          <div className="form-group__radio">
-            <label>
+          <div className="form-group__radio-wrapp">
+            <label className="form-group__radio">
               <input
                 type="radio"
-                value="annually"
-                checked={compoundingFrequency === "annually"}
+                value="monthly"
+                checked={compoundingFrequency === "monthly"}
                 onChange={handleFrequencyChange}
               />
-              Annually
+              Monthly
             </label>
-            <label>
+            <label className="form-group__radio">
               <input
                 type="radio"
                 value="quarterly"
@@ -186,14 +187,14 @@ const Calculator = ({
               />
               Quarterly
             </label>
-            <label>
+            <label className="form-group__radio">
               <input
                 type="radio"
-                value="monthly"
-                checked={compoundingFrequency === "monthly"}
+                value="annually"
+                checked={compoundingFrequency === "annually"}
                 onChange={handleFrequencyChange}
               />
-              Monthly
+              Annually
             </label>
           </div>
         </div>
