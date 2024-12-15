@@ -6,7 +6,8 @@ import { getFrequencyLabel } from "utils/helper";
 
 const ResultStyle = styled.div`
   text-align: center;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 
   h2 {
     font-size: 1.4rem;
@@ -63,14 +64,14 @@ const CalculatorResult = ({
         <MetricNumber
           label="Earned Interest:"
           number={earnedInterest}
-          numberClass="metric__number--earned"
+          customClass="earned"
           currencySymbol={currencySymbols[currency]}
         />
 
         <MetricNumber
           label="Total Amount"
           number={result}
-          numberClass="metric__number--total"
+          customClass="total"
           currencySymbol={currencySymbols[currency]}
         />
       </div>

@@ -25,11 +25,11 @@ const MetricNumberStyle = styled.p`
     }
 `;
 
-const MetricNumber = ({ label, number, currencySymbol = "", numberClass = "" }) => {
+const MetricNumber = ({ label, number, currencySymbol = "", customClass = "" }) => {
     return (
     <MetricNumberStyle className="metric">
       <span className="metric__label">{label}</span>
-      <span className={`metric__number ${numberClass}`}>
+      <span className={`metric__number metric__number--${customClass}`}>
         {currencySymbol}
         {new Intl.NumberFormat().format(number)}
       </span>

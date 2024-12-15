@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 // Styled Link component with cursor pointer
 const SubtitleStyled = styled.p`
-
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;

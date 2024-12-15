@@ -17,7 +17,7 @@ const LogoStyled = styled(Link)`
 const Logo = ({ ...props }) => {
   return (
     <LogoStyled to="/" {...props}>
-      <img src={LogoImage} alt="Bank Wallet" />
+      <img src={LogoImage} alt="Bank Wallet" /> {/* add dynamic alt tag  */}
     </LogoStyled>
   );
 };

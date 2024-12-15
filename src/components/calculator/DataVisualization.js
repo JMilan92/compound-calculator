@@ -122,7 +122,7 @@ const DataVisualization = ({ pieData = [], lineData = [] }) => {
 
       {pieData.length > 0 && (
         <div className="chart" style={{ width: "100%", height: 300 }}>
-          <Headline as="h2">Growth Over Time, vizualised</Headline>
+          <Headline as="h2">Pie chart</Headline>
           <p>
             This pie chart breaks down the total return on your investment into
             three key components: the initial deposit, the total regular

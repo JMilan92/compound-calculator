@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <HeaderStyleComponent>
         <Logo />
-      </HeaderStyleComponent>
+    </HeaderStyleComponent>
   );
 };
 

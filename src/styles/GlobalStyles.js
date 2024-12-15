@@ -20,7 +20,6 @@ const GlobalStyles = createGlobalStyle`
   --button-hover-color: #2F80ED; /* Blue for button hover effect */
   --error-color: #EB5757; /* Red for error messages */
   --success-color: #6FCF97; /* Green for success messages */
-
 }
 
   *,
