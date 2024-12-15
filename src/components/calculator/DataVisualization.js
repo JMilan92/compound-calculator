@@ -111,10 +111,10 @@ const DataVisualization = ({ pieData = [], lineData = [] }) => {
               <Line
                 type="monotone"
                 dataKey="total"
-                stroke="#8884d8"
+                stroke="#1A73E8"
                 activeDot={{ r: 8 }}
               />
-              <ReferenceLine y={0} stroke="red" />
+              <ReferenceLine y={0} stroke="grey" />
             </LineChart>
           </ResponsiveContainer>
         </div>

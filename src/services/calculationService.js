@@ -19,6 +19,7 @@ export const calculateCompoundInterest = ({
 
   const lineData = [];
   let totalInvested = 0;
+  let totalInterest = 0;
 
   // Calculate balance for each year (since compounding is yearly)
   for (let i = 1; i <= t; i++) {
@@ -28,13 +29,21 @@ export const calculateCompoundInterest = ({
 
     // Interest earned is the balance minus the total invested so far
     totalInvested += C; // Add the yearly contribution
-    const interestEarned = balance - (P + totalInvested);
 
+    // Interest on the initial deposit
+    const depositInterest = P * Math.pow(1 + r, i) - P;
+
+    // Interest on the monthly contributions over time
+    const contributionInterest = C * ((Math.pow(1 + r, i) - 1) / r) - C * i;
+
+    totalInterest = depositInterest + contributionInterest;
+
+    // Add to lineData to plot each value
     lineData.push({
-      label: `${i}`,
-      invested: P + totalInvested,
-      interest: interestEarned,
-      total: balance,
+      label: `${i}`,  // Year
+      invested: P + totalInvested, // Total invested
+      interest: totalInterest, // Interest earned
+      total: balance, // Total (balance)
     });
   }
 
@@ -54,6 +63,6 @@ export const calculateCompoundInterest = ({
       { name: "Contributions", value: contributions },
       { name: "Interest Earned", value: interestEarned },
     ],
-    lineData,
+    lineData, // Return the lineData with invested, interest, and total
   };
 };
