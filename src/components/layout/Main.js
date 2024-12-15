@@ -8,7 +8,7 @@ import Headline from "components/shared/Headline";
 
 const MainStyle = styled.main`
   background-color: var(--background-color);
-
+  padding-top: 4rem;
 
   .container {
     max-width: 1200px;

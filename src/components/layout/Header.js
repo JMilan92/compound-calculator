@@ -10,6 +10,12 @@ const HeaderStyleComponent = styled.header`
   padding: 1rem;
   background-color: var(--background-color);
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+
 `;
 const Header = () => {
   return (

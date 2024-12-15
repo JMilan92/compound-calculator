@@ -23,6 +23,10 @@ const Typography = createGlobalStyle`
     font-weight: 700;
   }
 
+  h1 {
+    margin-bottom: 3rem;
+  }
+
   html {
     font-family: var(--inter-font-family);
     font-size: var(--typography-font-size);

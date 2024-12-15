@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { getFrequencyLabel } from "utils/helper";
 
 const CalculatorStyle = styled.div`
   .form-group {
@@ -74,6 +75,9 @@ const Calculator = ({
   onSubmit,
   currencySymbols,
 }) => {
+
+  const frequencyLabel = getFrequencyLabel(compoundingFrequency); 
+
   return (
     <CalculatorStyle>
       <form onSubmit={onSubmit}>
@@ -149,7 +153,7 @@ const Calculator = ({
 
         <div className="form-group">
           <label className="form-group__label" htmlFor="period">
-            Period (Years)
+          Period ({frequencyLabel})
           </label>
           <input
             className="form-group__input"

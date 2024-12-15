@@ -7,15 +7,32 @@ import DataBreakdown from "./DataBreakdown";
 import Calculator from "./Calculator";
 
 const CompoundInterestCalculatorStyle = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
 
   .calculator {
     grid-column: 1 / 2;
     background-color: var(--card-background);
     border-radius: 12px;
     padding: 2rem;
+    position: sticky;
+    top: 6rem;
+  }
+
+  .result {
+    grid-column: 2 / 4;
+
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
   }
 `;
 
@@ -75,14 +92,24 @@ const CompoundInterestCalculator = () => {
           onSubmit={onSubmit}
           currencySymbols={currencySymbols}
         />
+      </div>
+      <div className="result">
         <CalculatorResult
+          period={period}
+          frequency={compoundingFrequency}
           result={result}
           currency={currency}
           currencySymbols={currencySymbols}
         />
+        <DataVisualization pieData={pieData} lineData={lineData} />
+        <DataBreakdown
+        currency={currency}
+        currencySymbols={currencySymbols}
+        lineData={lineData}
+        frequency={compoundingFrequency}
+      />
       </div>
-      <DataVisualization pieData={pieData} lineData={lineData} />
-      <DataBreakdown currency={currency} currencySymbols={currencySymbols} lineData={lineData} frequency={compoundingFrequency} />
+
     </CompoundInterestCalculatorStyle>
   );
 };

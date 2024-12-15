@@ -1,16 +1,44 @@
 import React from "react";
+import { styled } from "styled-components";
+import { getFrequencyLabel } from "utils/helper";
 
-const CalculatorResult = ({ result, currency, currencySymbols }) => {
+const ResultStyle = styled.div`
+
+    text-align: center;
+    margin-bottom: 2rem;
+
+    & > p {
+        margin-bottom: .5rem;
+        font-size: 1.2rem;
+    }
+
+    & .amount {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+`;
+
+const CalculatorResult = ({
+  result,
+  currency,
+  currencySymbols,
+  period,
+  frequency,
+}) => {
+  const frequencyLabel = getFrequencyLabel(frequency, period);
+
   if (result === null) return null;
 
   return (
-    <div className="result">
-      <h2>Result:</h2>
+    <ResultStyle>
       <p>
-        Total Amount: {currencySymbols[currency]}
+        After {period} {frequencyLabel.toLowerCase()}, your balance would be
+      </p>
+      <p className="amount">
+        {currencySymbols[currency]}
         {result}
       </p>
-    </div>
+    </ResultStyle>
   );
 };
 

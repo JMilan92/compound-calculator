@@ -1,12 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
+import { getFrequencyLabel } from "utils/helper";
 
 const DataBreakdownStyle = styled.div`
-  grid-column: 1 / 4;
-  background-color: var(--card-background);
-  border-radius: 12px;
-  padding: 1rem;
-
   h3 {
     margin-bottom: 1rem;
   }
@@ -16,7 +12,8 @@ const DataBreakdownStyle = styled.div`
     border-collapse: collapse;
   }
 
-  th, td {
+  th,
+  td {
     border: 1px solid #ccc;
     padding: 0.75rem;
     text-align: center;
@@ -33,47 +30,40 @@ const DataBreakdownStyle = styled.div`
 `;
 
 const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
-  if (!lineData || lineData.length === 0) {
+  const frequencyLabel = getFrequencyLabel(frequency);
+  if (!lineData || lineData.length !== 0) {
     return (
       <DataBreakdownStyle>
         <h3>Investment Breakdown</h3>
-        <p>No data available to display.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>{frequencyLabel}</th>
+              <th>Invested</th>
+              <th>Interest Earned</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lineData.map((entry, index) => (
+              <tr key={index}>
+                <td>{entry.label}</td>
+                <td>
+                  {currencySymbols[currency]} {entry.invested.toFixed(2)}
+                </td>
+                <td>
+                  {currencySymbols[currency]} {entry.interest.toFixed(2)}
+                </td>
+                <td>
+                  {currencySymbols[currency]} {entry.total.toFixed(2)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </DataBreakdownStyle>
     );
   }
-
-  const frequencyLabel =
-    frequency === "monthly"
-      ? "Month"
-      : frequency === "quarterly"
-      ? "Quarter"
-      : "Year";
-
-  return (
-    <DataBreakdownStyle>
-      <h3>Investment Breakdown</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>{frequencyLabel}</th>
-            <th>Invested</th>
-            <th>Interest Earned</th>
-            <th>Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lineData.map((entry, index) => (
-            <tr key={index}>
-              <td>{entry.label}</td>
-              <td>{currencySymbols[currency]} {entry.invested.toFixed(2)}</td>
-              <td>{currencySymbols[currency]} {entry.interest.toFixed(2)}</td>
-              <td>{currencySymbols[currency]} {entry.total.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </DataBreakdownStyle>
-  );
 };
 
 export default DataBreakdown;

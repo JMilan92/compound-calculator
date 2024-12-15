@@ -11,7 +11,6 @@ const HeadlineStyled = styled.h1`
     as === "h4" ? "1.5rem" :
     as === "h5" ? "1.25rem" : "1rem"};
   color: var(--text-color);
-  margin-bottom: 3rem;
 `;
 
 // Headline component
