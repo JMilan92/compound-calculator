@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import LogoImage from "assets/images/bank-logo.svg";
 
 // Styled Link component with cursor pointer
-const StyledLink = styled(Link)`
+const LogoStyled = styled(Link)`
   width: 160px;
   height: 30px;
   display: inline-block;
@@ -16,9 +16,9 @@ const StyledLink = styled(Link)`
 
 const Logo = ({ ...props }) => {
   return (
-    <StyledLink to="/" {...props}>
+    <LogoStyled to="/" {...props}>
       <img src={LogoImage} alt="Bank Wallet" />
-    </StyledLink>
+    </LogoStyled>
   );
 };
 
