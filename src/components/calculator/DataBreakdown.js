@@ -37,7 +37,9 @@ const DataBreakdownStyle = styled.div`
 
 const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
   const frequencyLabel = getFrequencyLabel(frequency);
-  if (!lineData || lineData.length !== 0) {
+
+  // Fixing the condition to check if lineData is empty
+  if (lineData && lineData.length > 0) {
     return (
       <DataBreakdownStyle>
         <Headline as="h2">Investment Breakdown</Headline>
@@ -74,6 +76,8 @@ const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
       </DataBreakdownStyle>
     );
   }
+
+  return null; // If no lineData is available, render nothing
 };
 
 export default DataBreakdown;

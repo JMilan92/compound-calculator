@@ -6,8 +6,9 @@ import "normalize.css";
 const GlobalStyles = createGlobalStyle`
 
 :root {
-  --primary-color: #2D9CDB; /* Blue for buttons and accents */
+  --primary-color: #1A73E8; /* Blue for buttons and accents */
   --secondary-color: #56CCF2; /* Lighter blue for hover effects */
+  --accent-color: #0DC1AB; /* Green */
   --background-color: #F4F6F9; /* Soft off-white background */
   --card-background: #FFFFFF; /* White for the main content cards */
   --text-color: #333333; /* Dark grey text for good readability */

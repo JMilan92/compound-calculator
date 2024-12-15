@@ -49,7 +49,7 @@ const DataVizualizationStyle = styled.div`
 `;
 
 // Define the colors for the Pie chart
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
+const COLORS = ["#333", "#1A73E8", "#0DC1AB"];
 
 // Helper function to format numbers to shorter version (e.g., 1000000 -> 1M)
 const formatNumber = (num) => {
@@ -137,7 +137,7 @@ const DataVisualization = ({ pieData = [], lineData = [] }) => {
                 nameKey="name"
                 outerRadius={80}
                 fill="#8884d8"
-                label={({ value }) => `${formatPercentage(value, totalValue)}%`} // Display percentage
+                label={({ value }) => `${formatPercentage(value, totalValue)}%`}
               >
                 {pieData.map((entry, index) => (
                   <Cell

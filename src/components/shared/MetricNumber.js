@@ -1,0 +1,40 @@
+import React from "react";
+import { styled } from "styled-components";
+
+const MetricNumberStyle = styled.p`
+ &.metric {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .metric__number {
+      font-weight: 600;
+      font-size: 2rem;
+      color: light-gray;
+
+      &--earned {
+        color: var(--accent-color);
+      }
+
+      &--total {
+        color: var(--primary-color);
+      }
+    }
+`;
+
+const MetricNumber = ({ label, number, currencySymbol = "", numberClass = "" }) => {
+    return (
+    <MetricNumberStyle className="metric">
+      <span className="metric__label">{label}</span>
+      <span className={`metric__number ${numberClass}`}>
+        {currencySymbol}
+        {new Intl.NumberFormat().format(number)}
+      </span>
+    </MetricNumberStyle>
+  );
+};
+
+export default MetricNumber;
