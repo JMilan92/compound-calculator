@@ -1,12 +1,7 @@
+import React from "react";
 import { styled } from "styled-components";
-import React, { useState } from "react";
 
 const CalculatorStyle = styled.div`
-  grid-column: 1 / 2;
-  background-color: white;
-  border-radius: 12px;
-  padding: 1rem;
-
   .form-group {
     margin: 1rem;
     display: flex;
@@ -58,76 +53,28 @@ const CalculatorStyle = styled.div`
       background-color: #0056b3;
     }
   }
-
-  .result {
-    margin-top: 1rem;
-    h2 {
-      margin-bottom: 0.5rem;
-    }
-  }
 `;
 
-const currencySymbols = {
-  USD: "$",
-  EUR: "€",
-  CAD: "C$",
-};
-
-const Calculator = () => {
-  const [deposit, setDeposit] = useState("");
-  const [yearlyReturn, setYearlyReturn] = useState(5); // Default slider value
-  const [monthlyContribution, setMonthlyContribution] = useState("");
-  const [period, setPeriod] = useState("");
-  const [compoundingFrequency, setCompoundingFrequency] = useState("monthly");
-  const [currency, setCurrency] = useState("USD");
-  const [result, setResult] = useState(null);
-
-  const handleFrequencyChange = (e) => {
-    setCompoundingFrequency(e.target.value);
-  };
-
-  const handleCurrencyChange = (e) => {
-    setCurrency(e.target.value);
-  };
-
-  const handleYearlyReturnChange = (e) => {
-    const value = Math.min(Math.max(e.target.value, 1), 20); // Keep value between 1 and 20
-    setYearlyReturn(value);
-  };
-
-  const calculateCompoundInterest = (e) => {
-    e.preventDefault();
-
-    const P = parseFloat(deposit);
-    const r = parseFloat(yearlyReturn) / 100;
-    const C = parseFloat(monthlyContribution);
-    const t = parseInt(period);
-
-    let n;
-    switch (compoundingFrequency) {
-      case "annually":
-        n = 1;
-        break;
-      case "quarterly":
-        n = 4;
-        break;
-      case "monthly":
-        n = 12;
-        break;
-      default:
-        n = 12;
-    }
-
-    const A =
-      P * Math.pow(1 + r / n, n * t) +
-      C * ((Math.pow(1 + r / n, n * t) - 1) / (r / n));
-
-    setResult(A.toFixed(2));
-  };
-
+const Calculator = ({
+  deposit,
+  setDeposit,
+  yearlyReturn,
+  setYearlyReturn,
+  monthlyContribution,
+  setMonthlyContribution,
+  period,
+  setPeriod,
+  compoundingFrequency,
+  handleFrequencyChange,
+  currency,
+  handleCurrencyChange,
+  handleYearlyReturnChange,
+  onSubmit,
+  currencySymbols,
+}) => {
   return (
     <CalculatorStyle>
-      <form onSubmit={calculateCompoundInterest}>
+      <form onSubmit={onSubmit}>
         <div className="form-group">
           <label className="form-group__label" htmlFor="currency">
             Currency
@@ -246,16 +193,6 @@ const Calculator = () => {
 
         <button type="submit">Calculate</button>
       </form>
-
-      {result !== null && (
-        <div className="result">
-          <h2>Result:</h2>
-          <p>
-            Total Amount: {currencySymbols[currency]}
-            {result}
-          </p>
-        </div>
-      )}
     </CalculatorStyle>
   );
 };
