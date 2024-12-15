@@ -7,10 +7,10 @@ import DataBreakdown from "./DataBreakdown";
 import Calculator from "./Calculator";
 
 const CompoundInterestCalculatorStyle = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    align-items: start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
 
   .calculator {
     grid-column: 1 / 2;
@@ -32,7 +32,6 @@ const CompoundInterestCalculatorStyle = styled.div`
     flex-direction: column;
     text-align: center;
     justify-content: center;
-
   }
 `;
 
@@ -100,16 +99,17 @@ const CompoundInterestCalculator = () => {
           result={result}
           currency={currency}
           currencySymbols={currencySymbols}
+          monthlyContribution={monthlyContribution}
+          deposit={deposit}
         />
         <DataVisualization pieData={pieData} lineData={lineData} />
         <DataBreakdown
-        currency={currency}
-        currencySymbols={currencySymbols}
-        lineData={lineData}
-        frequency={compoundingFrequency}
-      />
+          currency={currency}
+          currencySymbols={currencySymbols}
+          lineData={lineData}
+          frequency={compoundingFrequency}
+        />
       </div>
-
     </CompoundInterestCalculatorStyle>
   );
 };

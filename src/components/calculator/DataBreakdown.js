@@ -1,10 +1,16 @@
+import Headline from "components/shared/Headline";
 import React from "react";
 import { styled } from "styled-components";
 import { getFrequencyLabel } from "utils/helper";
 
 const DataBreakdownStyle = styled.div`
-  h3 {
-    margin-bottom: 1rem;
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
   }
 
   table {
@@ -34,7 +40,8 @@ const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
   if (!lineData || lineData.length !== 0) {
     return (
       <DataBreakdownStyle>
-        <h3>Investment Breakdown</h3>
+        <Headline as="h2">Investment Breakdown</Headline>
+        <p>Detailed breakdown of your investment showing the monthly contributions, interest earned, and the total balance for each month.</p>
         <table>
           <thead>
             <tr>
@@ -49,13 +56,16 @@ const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
               <tr key={index}>
                 <td>{entry.label}</td>
                 <td>
-                  {currencySymbols[currency]} {entry.invested.toFixed(2)}
+                  {currencySymbols[currency]}
+                  {new Intl.NumberFormat().format(entry.invested.toFixed(2))}
                 </td>
                 <td>
-                  {currencySymbols[currency]} {entry.interest.toFixed(2)}
+                  {currencySymbols[currency]}
+                  {new Intl.NumberFormat().format(entry.interest.toFixed(2))}
                 </td>
                 <td>
-                  {currencySymbols[currency]} {entry.total.toFixed(2)}
+                  {currencySymbols[currency]} 
+                  {new Intl.NumberFormat().format(entry.total.toFixed(2))}
                 </td>
               </tr>
             ))}
