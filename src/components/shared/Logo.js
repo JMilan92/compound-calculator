@@ -11,7 +11,7 @@ const LogoStyled = styled(Link)`
   width: 160px;
   height: 30px;
   display: inline-block;
-  cursor: pointer; /* Add cursor pointer for clickable effect */
+  cursor: pointer;
 `;
 
 const Logo = ({ ...props }) => {
