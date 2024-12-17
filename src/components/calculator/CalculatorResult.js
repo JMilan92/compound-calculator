@@ -45,7 +45,6 @@ const CalculatorResult = ({
     monthlyContribution = monthlyContribution * 3; // Convert monthly contribution to quarterly
   }
 
-
   const earnedInterest = result - (Number(deposit) + Number(monthlyContribution) * Number(period));
 
   return (

@@ -5,6 +5,9 @@ import { calculateCompoundInterest } from "services/calculationService";
 import DataVisualization from "./DataVisualization";
 import DataBreakdown from "./DataBreakdown";
 import Calculator from "./Calculator";
+import Button from "components/shared/Button";
+import { CloudDownload } from 'lucide-react';
+import Modal from "components/shared/Modal";
 
 const CompoundInterestCalculatorStyle = styled.div`
   display: grid;
@@ -55,6 +58,7 @@ const CompoundInterestCalculator = () => {
   const [result, setResult] = useState(null);
   const [pieData, setPieData] = useState([]);
   const [lineData, setLineData] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
   const handleFrequencyChange = (e) => setCompoundingFrequency(e.target.value);
   const handleCurrencyChange = (e) => setCurrency(e.target.value);
@@ -72,6 +76,12 @@ const CompoundInterestCalculator = () => {
     setPieData(pieData);
     setLineData(lineData);
   };
+
+  // Function to open the modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Function to close the modal
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <CompoundInterestCalculatorStyle>
@@ -113,7 +123,20 @@ const CompoundInterestCalculator = () => {
           lineData={lineData}
           frequency={compoundingFrequency}
         />
+        
+        {/* Conditional rendering of Button and Modal */}
+        {lineData && lineData.length > 0 && (
+          <Button
+            text="Download Report"
+            type="submit"
+            icon={CloudDownload}
+            onClick={openModal} // Open the modal when the button is clicked
+          />
+        )}
       </div>
+
+      {/* Render the Modal if it's open */}
+      {isModalOpen && <Modal onClose={closeModal} />}
     </CompoundInterestCalculatorStyle>
   );
 };

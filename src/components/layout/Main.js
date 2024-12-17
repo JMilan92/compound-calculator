@@ -5,7 +5,6 @@ import CompoundInterestCalculator from "components/calculator/CompoundInterestCa
 import Subtitle from "components/shared/Subtitle";
 import Headline from "components/shared/Headline";
 
-
 const MainStyle = styled.main`
   background: var(--background-color);
   padding-top: 4rem;

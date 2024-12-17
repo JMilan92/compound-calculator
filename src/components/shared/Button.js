@@ -30,7 +30,7 @@ const StyledButton = styled.button`
 
   svg {
     position: absolute;
-    right: -20px;
+    right: -24px;
     top: 100%;
     transform: translateY(10px);
     width: 20px;
