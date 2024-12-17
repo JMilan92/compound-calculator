@@ -2,9 +2,10 @@ import React from "react";
 import { styled } from "styled-components";
 import { getFrequencyLabel } from "utils/helper";
 import { Tooltip } from "react-tooltip";
+import Button from "components/shared/Button";
+import { ArrowUpRight } from 'lucide-react';
 
 const CalculatorStyle = styled.div`
-
   .tooltip {
     font-size: 0.8rem;
     color: var(--label-color);
@@ -95,7 +96,6 @@ const Calculator = ({
 
   return (
     <CalculatorStyle>
-
       <Tooltip id="my-tooltip" />
 
       <form onSubmit={onSubmit}>
@@ -265,11 +265,7 @@ const Calculator = ({
             </label>
           </div>
         </div>
-
-
-        <button className="btn" type="submit">
-          <span>Calculate</span>
-        </button>
+        <Button text="Calculate" type="submit" icon={ArrowUpRight} ></Button>
       </form>
     </CalculatorStyle>
   );
