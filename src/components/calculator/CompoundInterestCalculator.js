@@ -40,6 +40,15 @@ const CompoundInterestCalculatorStyle = styled.div`
     text-align: center;
     justify-content: center;
   }
+
+  @media (max-width: 992px) {
+    display: block;
+
+    .calculator {
+      margin-bottom: 2rem;
+      position: static;
+    }
+  }
 `;
 
 const currencySymbols = {
@@ -129,7 +138,7 @@ const CompoundInterestCalculator = () => {
             text="Download Report"
             type="submit"
             icon={CloudDownload}
-            onClick={openModal} // Open the modal
+            onClick={openModal} 
           />
         )}
       </div>
