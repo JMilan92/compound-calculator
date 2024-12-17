@@ -46,7 +46,13 @@ const CompoundInterestCalculatorStyle = styled.div`
 
     .calculator {
       margin-bottom: 2rem;
+      padding: 1rem;
       position: static;
+    }
+
+    .result {
+      min-height: 0px;
+      padding: 3rem 1rem 1rem 1rem;
     }
   }
 `;

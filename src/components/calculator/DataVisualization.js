@@ -47,6 +47,14 @@ const DataVizualizationStyle = styled.div`
   .pie-chart {
     margin-top: -50px;
   }
+
+  @media (max-width: 768px) {
+    .chart {
+      margin-bottom: 12rem;
+    }
+  }
+
+  
 `;
 
 // Define the colors for the Pie chart
