@@ -124,13 +124,12 @@ const CompoundInterestCalculator = () => {
           frequency={compoundingFrequency}
         />
         
-        {/* Conditional rendering of Button and Modal */}
         {lineData && lineData.length > 0 && (
           <Button
             text="Download Report"
             type="submit"
             icon={CloudDownload}
-            onClick={openModal} // Open the modal when the button is clicked
+            onClick={openModal} // Open the modal
           />
         )}
       </div>
