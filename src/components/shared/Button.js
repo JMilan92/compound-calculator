@@ -12,7 +12,7 @@ const StyledButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background: linear-gradient(120deg, #3F8CFF, #164BCE);
+    background: var(--gradient-primary);
     background-size: 200% 200%;
     background-position: left center;
     transition: background-position 0.3s ease, box-shadow 0.3s ease;

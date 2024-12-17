@@ -21,6 +21,11 @@ const GlobalStyles = createGlobalStyle`
   --button-hover-color: #1665C0; /* Blue for button hover effect */
   --error-color: #EB5757; /* Red for error messages */
   --success-color: #6FCF97; /* Green for success messages */
+  --header-table: #f4f4f4; /* Light grey for table headers */
+
+  --gradient-primary: linear-gradient(120deg, #3F8CFF, #164BCE);
+
+  --modal-backdrop: rgba(0, 0, 0, 0.5); /* Semi-transparent black for modal backdrop */
 }
 
   *,
@@ -29,6 +34,11 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 
 `;

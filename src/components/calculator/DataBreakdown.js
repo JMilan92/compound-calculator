@@ -16,6 +16,10 @@ const DataBreakdownStyle = styled.div`
     margin-bottom: 2rem;
   }
 
+  .table-wrapp {
+    overflow: auto;
+  }
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -29,12 +33,12 @@ const DataBreakdownStyle = styled.div`
   }
 
   th {
-    background-color: #f4f4f4;
+    background-color: var(--header-table);
     font-weight: bold;
   }
 
   td {
-    color: #333;
+    color: var(--text-color);
   }
 `;
 
@@ -46,36 +50,41 @@ const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
     return (
       <DataBreakdownStyle>
         <Headline as="h2">Investment Breakdown</Headline>
-        <Paragraph>Detailed breakdown of your investment showing the monthly contributions, interest earned, and the total balance for each month.</Paragraph>
-        <table>
-          <thead>
-            <tr>
-              <th>{frequencyLabel}</th>
-              <th>Invested</th>
-              <th>Interest Earned</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lineData.map((entry, index) => (
-              <tr key={index}>
-                <td>{entry.label}</td>
-                <td>
-                  {currencySymbols[currency]}
-                  {new Intl.NumberFormat().format(entry.invested.toFixed(2))}
-                </td>
-                <td>
-                  {currencySymbols[currency]}
-                  {new Intl.NumberFormat().format(entry.interest.toFixed(2))}
-                </td>
-                <td>
-                  {currencySymbols[currency]} 
-                  {new Intl.NumberFormat().format(entry.total.toFixed(2))}
-                </td>
+        <Paragraph>
+          Detailed breakdown of your investment showing the monthly
+          contributions, interest earned, and the total balance for each month.
+        </Paragraph>
+        <div className="table-wrapp">
+          <table>
+            <thead>
+              <tr>
+                <th>{frequencyLabel}</th>
+                <th>Invested</th>
+                <th>Interest Earned</th>
+                <th>Balance</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {lineData.map((entry, index) => (
+                <tr key={index}>
+                  <td>{entry.label}</td>
+                  <td>
+                    {currencySymbols[currency]}
+                    {new Intl.NumberFormat().format(entry.invested.toFixed(2))}
+                  </td>
+                  <td>
+                    {currencySymbols[currency]}
+                    {new Intl.NumberFormat().format(entry.interest.toFixed(2))}
+                  </td>
+                  <td>
+                    {currencySymbols[currency]}
+                    {new Intl.NumberFormat().format(entry.total.toFixed(2))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </DataBreakdownStyle>
     );
   }

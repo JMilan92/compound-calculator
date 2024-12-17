@@ -28,7 +28,6 @@ const DataVizualizationStyle = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0 6rem;
     text-align: center;
 
     &__img {

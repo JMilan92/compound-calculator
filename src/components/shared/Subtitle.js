@@ -7,8 +7,8 @@ const SubtitleStyled = styled.p`
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    background: rgb(36,101,255);
-    background: linear-gradient(90deg, rgba(36,101,255,1) 0%, rgba(4,60,133,1) 85%);
+    background: var(--primary-color);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: .5rem;
