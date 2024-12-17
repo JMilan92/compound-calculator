@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledParagraph = styled.p`
     font-size: 1rem;
     margin-bottom: 2rem;
+    color: var(--text-color);
 `;
 
 // Create the Paragraph component

@@ -5,6 +5,7 @@ import "normalize.css";
 // => Create Global Styles
 const GlobalStyles = createGlobalStyle`
 
+/* Light Theme */
 :root {
   --primary-color: #1A73E8; /* Blue for buttons and accents */
   --secondary-color: #56CCF2; /* Lighter blue for hover effects */
@@ -22,7 +23,6 @@ const GlobalStyles = createGlobalStyle`
   --error-color: #EB5757; /* Red for error messages */
   --success-color: #6FCF97; /* Green for success messages */
   --header-table: #f4f4f4; /* Light grey for table headers */
-
   --gradient-primary: linear-gradient(120deg, #3F8CFF, #164BCE);
 
   --modal-backdrop: rgba(0, 0, 0, 0.5); /* Semi-transparent black for modal backdrop */
