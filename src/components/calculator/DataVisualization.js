@@ -17,6 +17,7 @@ import {
 import Headline from "components/shared/Headline";
 import illustration from "assets/images/illustration.svg";
 import { formatNumber } from "utils/helper";
+import Paragraph from "components/shared/Paragraph";
 
 const DataVizualizationStyle = styled.div`
 
@@ -44,8 +45,8 @@ const DataVizualizationStyle = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  p {
-    margin-bottom: 1.2rem;
+  .pie-chart {
+    margin-top: -50px;
   }
 `;
 
@@ -72,23 +73,23 @@ const DataVisualization = ({ pieData = [], lineData = [] }) => {
             alt="Illustration"
           />
           <Headline as="h2">Start Your Investment Journey Today!</Headline>
-          <p>
+          <Paragraph>
             Investing can be the key to building long-term wealth. The earlier
             you start, the more time your money has to grow through the power of
             compound interest. Let's get started—calculate your potential
             returns and watch your investments grow over time!
-          </p>
+          </Paragraph>
         </div>
       )}
 
       {lineData.length > 0 && (
         <div className="chart" style={{ width: "100%", height: 300 }}>
           <Headline as="h2">Growth Over Time, vizualised</Headline>
-          <p>
+          <Paragraph>
             This chart illustrates how your investments grow over time. As
             shown, the longer the investment period, the greater the effect of
             compound interest.
-          </p>
+          </Paragraph>
 
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={lineData}>
@@ -113,13 +114,13 @@ const DataVisualization = ({ pieData = [], lineData = [] }) => {
       {pieData.length > 0 && (
         <div className="chart" style={{ width: "100%", height: 300 }}>
           <Headline as="h2">Pie chart</Headline>
-          <p>
+          <Paragraph>
             This pie chart breaks down the total return on your investment into
             three key components: the initial deposit, the total regular
             contributions you made, and the total interest earned over the
             selected period."
-          </p>
-          <ResponsiveContainer width="100%" height="100%">
+          </Paragraph>
+          <ResponsiveContainer width="100%" height="100%" className="pie-chart">
             <PieChart>
               <Pie
                 data={pieData}

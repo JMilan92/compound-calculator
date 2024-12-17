@@ -1,4 +1,5 @@
 import Headline from "components/shared/Headline";
+import Paragraph from "components/shared/Paragraph";
 import React from "react";
 import { styled } from "styled-components";
 import { getFrequencyLabel } from "utils/helper";
@@ -10,7 +11,7 @@ const DataBreakdownStyle = styled.div`
   }
 
   p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   table {
@@ -43,7 +44,7 @@ const DataBreakdown = ({ lineData, frequency, currency, currencySymbols }) => {
     return (
       <DataBreakdownStyle>
         <Headline as="h2">Investment Breakdown</Headline>
-        <p>Detailed breakdown of your investment showing the monthly contributions, interest earned, and the total balance for each month.</p>
+        <Paragraph>Detailed breakdown of your investment showing the monthly contributions, interest earned, and the total balance for each month.</Paragraph>
         <table>
           <thead>
             <tr>

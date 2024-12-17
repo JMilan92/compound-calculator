@@ -5,10 +5,10 @@ import Logo from "components/shared/Logo";
 
 const HeaderStyleComponent = styled.header`
 
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-light);
   box-shadow: 10px 0 15px rgba(0,0,0,0.20);
   padding: 1rem;
-  background-color: var(--background-color);
+  background: var(--background-color);
 
   position: fixed;
   top: 0;

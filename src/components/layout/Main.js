@@ -7,7 +7,7 @@ import Headline from "components/shared/Headline";
 
 
 const MainStyle = styled.main`
-  background-color: var(--background-color);
+  background: var(--background-color);
   padding-top: 4rem;
 
   .container {

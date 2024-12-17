@@ -15,6 +15,7 @@ const CompoundInterestCalculatorStyle = styled.div`
   .calculator {
     grid-column: 1 / 2;
     background-color: var(--card-background);
+    border: 1px solid var(--border-light);
     border-radius: 12px;
     padding: 2rem;
     position: sticky;
@@ -25,8 +26,11 @@ const CompoundInterestCalculatorStyle = styled.div`
     grid-column: 2 / 4;
 
     background-color: var(--card-background);
+    border: 1px solid var(--border-light);
     border-radius: 12px;
     padding: 2rem;
+
+    min-height: 680px;
 
     display: flex;
     flex-direction: column;

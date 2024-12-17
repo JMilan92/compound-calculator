@@ -266,8 +266,9 @@ const Calculator = ({
           </div>
         </div>
 
+
         <button className="btn" type="submit">
-          Calculate
+          <span>Calculate</span>
         </button>
       </form>
     </CalculatorStyle>
