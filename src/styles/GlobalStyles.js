@@ -7,25 +7,60 @@ const GlobalStyles = createGlobalStyle`
 
 /* Light Theme */
 :root {
-  --primary-color: #1A73E8; /* Blue for buttons and accents */
-  --secondary-color: #56CCF2; /* Lighter blue for hover effects */
-  --accent-color: #0DC1AB; /* Green */
-  --background-color: linear-gradient(120deg, #FFFFFF, #F4F6F9 50%, #E9EDF3); /* Soft off-white background */
-  --card-background: #FFFFFF; /* White for the main content cards */
-  --text-color: #333333; /* Dark grey text for good readability */
-  --heading-color: #2F80ED; /* Bold blue for headings and important figures */
-  --label-color: #4a5568; /* Light grey for labels and placeholder text */
-  --border: #BDBDBD; /* Soft border color for inputs */
-  --border-light: #D1D1D1; /* Soft border color for inputs */
+  --primary-color: #1A73E8;
+  --secondary-color: #56CCF2;
+  --accent-color: #0DC1AB;
+  --background-color: linear-gradient(120deg, #FFFFFF, #F4F6F9 50%, #E9EDF3);
+  --card-background: #FFFFFF;
+  --input-background: #FFFFFF;
+  --text-color: #333333;
+  --input-color: #333333;
+  --heading-color: #2F80ED;
+  --label-color: #4a5568;
+  --border: #BDBDBD;
+  --border-light: #D1D1D1;
   --button-background: var(--primary-color);
-  --button-text-color: #FFFFFF; /* White text for buttons */
-  --button-hover-color: #1665C0; /* Blue for button hover effect */
-  --error-color: #EB5757; /* Red for error messages */
-  --success-color: #6FCF97; /* Green for success messages */
-  --header-table: #f4f4f4; /* Light grey for table headers */
+  --button-text-color: #FFFFFF;
+  --button-hover-color: #1665C0;
+  --error-color: #EB5757;
+  --success-color: #6FCF97;
+  --header-table: #f4f4f4;
   --gradient-primary: linear-gradient(120deg, #3F8CFF, #164BCE);
+  --modal-backdrop: rgba(0, 0, 0, 0.5);
 
-  --modal-backdrop: rgba(0, 0, 0, 0.5); /* Semi-transparent black for modal backdrop */
+  --sun-dark: #D1D1D1;
+  --sun-light: #333;
+  --moon-dark: #D1D1D1;
+  --moon-light: #333;
+}
+
+/* Dark Theme */
+:root .dark {
+  --primary-color: #1A73E8;
+  --secondary-color: #56CCF2;
+  --accent-color: #0DC1AB;
+  --background-color: linear-gradient(120deg, #333333, #4A4A4A 50%, #2E2E2E);
+  --card-background: #1E1E1E;
+  --input-background: #1E1E1E;
+  --text-color: #D1D1D1;
+  --input-color: #D1D1D1;
+  --heading-color: #82A9FF;
+  --label-color: #A8A8A8;
+  --border: #444444;
+  --border-light: #666666;
+  --button-background: var(--primary-color);
+  --button-text-color: #FFF;
+  --button-hover-color: #2A5EB5;
+  --error-color: #EB5757;
+  --success-color: #6FCF97;
+  --header-table: #2C2C2C;
+  --gradient-primary: linear-gradient(120deg, #3F8CFF, #164BCE);
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+
+  --sun-dark: #333;
+  --sun-light: #D1D1D1;
+  --moon-dark: #333;
+  --moon-light: #D1D1D1;
 }
 
   *,

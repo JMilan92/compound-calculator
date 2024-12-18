@@ -27,13 +27,14 @@ const DataBreakdownStyle = styled.div`
 
   th,
   td {
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     padding: 0.75rem;
     text-align: center;
   }
 
   th {
     background-color: var(--header-table);
+    color: var(--text-color);
     font-weight: bold;
   }
 

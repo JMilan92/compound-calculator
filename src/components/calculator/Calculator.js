@@ -34,6 +34,8 @@ const CalculatorStyle = styled.div`
       padding: 0.5rem;
       border: 1px solid var(--border);
       border-radius: 4px;
+      background-color: var(--input-background);
+      color: var(--input-color);
     }
 
     &__radio {
@@ -41,6 +43,7 @@ const CalculatorStyle = styled.div`
       align-items: center;
       gap: 0.5rem;
       cursor: pointer;
+      color: var(--input-color);
     }
 
     &__slider {
@@ -60,6 +63,8 @@ const Input = styled.input`
   border: 1px solid var(--border);
   border-radius: 4px;
   width: 100%;
+  background-color: var(--input-background);
+  color: var(--input-color);
 `;
 
 const SliderContainer = styled.div`

@@ -1,24 +1,10 @@
-// Import dependencies
 import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import LogoLight from "assets/images/bank-logo-light.svg";
+import LogoDark from "assets/images/bank-logo-dark.svg";
 
-// => Import assets
-import LogoImage from "assets/images/bank-logo.svg";
-
-// Styled Link component with cursor pointer
-const LogoStyled = styled(Link)`
-  width: 160px;
-  height: 30px;
-  display: inline-block;
-  cursor: pointer;
-`;
-
-const Logo = ({ ...props }) => {
+const Logo = ({ isDarkMode }) => {
   return (
-    <LogoStyled to="/" {...props}>
-      <img src={LogoImage} alt="Bank Wallet" /> {/* add dynamic alt tag  */}
-    </LogoStyled>
+    <img src={isDarkMode ? LogoDark : LogoLight} alt="Logo" />
   );
 };
 

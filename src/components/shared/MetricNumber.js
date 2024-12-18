@@ -10,10 +10,15 @@ const MetricNumberStyle = styled.p`
     align-items: center;
   }
 
+  & .metric__label {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+  }
+
   & .metric__number {
       font-weight: 600;
       font-size: 2rem;
-      color: light-gray;
+      color: var(--text-color);
 
       &--earned {
         color: var(--accent-color);

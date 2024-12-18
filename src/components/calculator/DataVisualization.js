@@ -58,7 +58,7 @@ const DataVizualizationStyle = styled.div`
 `;
 
 // Define the colors for the Pie chart
-const COLORS = ["#333", "#1A73E8", "#0DC1AB"];
+const COLORS = ["#f90", "#1A73E8", "#0DC1AB"];
 
 const DataVisualization = ({ pieData = [], lineData = [] }) => {
   // Function to format percentage values with 2 decimal places
