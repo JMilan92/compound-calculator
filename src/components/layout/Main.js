@@ -14,6 +14,12 @@ const MainStyle = styled.main`
     margin: 0 auto;
     padding: 4rem 2rem;
   }
+
+  @media (max-width: 992px) {
+    .container {
+      padding: 2rem 1rem;
+    }
+  }
 `;
 const Main = () => {
   return (
